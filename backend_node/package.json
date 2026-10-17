@@ -1,0 +1,22 @@
+{
+  "name": "stockpulse-backend-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Node.js API and RabbitMQ workers for StockPulse",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "worker": "node src/workers/recommendationWorker.js",
+    "dev": "nodemon src/server.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "amqplib": "^0.10.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": { "nodemon": "^3.1.9" }
+}

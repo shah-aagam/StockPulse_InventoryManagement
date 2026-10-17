@@ -1,0 +1,18 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: stockpulse-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - stockpulse-mongodb-data:/data/db
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: stockpulse-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+volumes:
+  stockpulse-mongodb-data:
